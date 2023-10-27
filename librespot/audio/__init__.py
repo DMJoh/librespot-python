@@ -631,6 +631,7 @@ class CdnManager:
                 headers={
                     "Range": "bytes={}-{}".format(range_start, range_end)
                 },
+                verify=False
             )
             if response.status_code != 206:
                 raise IOError(response.status_code)
